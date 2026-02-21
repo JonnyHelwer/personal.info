@@ -1,270 +1,408 @@
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <head>
-<base href="https://jonny.helwer.personal.info/">
-<title>Jonny Helwers Persönliche Seite</title>
-<style>
-body, html {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: #e0e0e0;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background-color: #0e0614;
-}
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    position: relative;
-    z-index: 1;
-    background-color: rgba(30, 20, 40, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-header {
-    background-color: #321b4a;
-    color: #ffffff;
-    text-align: center;
-    padding: 2em;
-    border-radius: 20px 20px 0 0;
-    margin: -20px -20px 20px -20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-h1 { 
-    margin-bottom: 0; 
-    font-size: 2.5em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-.subtitle { 
-    font-style: italic;
-    font-weight: 300;
-    color: #d8bfff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-section {
-    background-color: #1e1425;
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-}
-h2 { 
-    color: #9370db; 
-    font-size: 1.8em;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-.timeline {
-    border-left: 3px solid #9370db;
-    padding-left: 20px;
-    margin-left: 20px;
-}
-.event {
-    margin-bottom: 20px;
-    position: relative;
-}
-.event:before {
-    content: '';
-    width: 15px;
-    height: 15px;
-    background: #9370db;
-    border-radius: 50%;
-    position: absolute;
-    left: -29px;
-    top: 5px;
-    box-shadow: 0 0 8px rgba(147, 112, 219, 0.8);
-}
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.skill {
-    background-color: #4b2e6b;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.skill:hover {
-    background-color: #9370db;
-    color: #0e0614;
-    box-shadow: 0 6px 12px rgba(147, 112, 219, 0.4);
-}
-#background-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-a {
-    color: #9370db;
-    text-decoration: none;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-a:hover {
-    color: #b19cd9;
-    text-shadow: 0 0 8px rgba(147, 112, 219, 0.6);
-}
-.quote {
-    font-style: italic;
-    color: #d8bfff;
-    border-left: 3px solid #9370db;
-    padding-left: 15px;
-    margin: 20px 0;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
-.achievements {
-    list-style-type: none;
-    padding-left: 0;
-}
-.achievements li {
-    margin-bottom: 10px;
-    padding-left: 25px;
-    position: relative;
-}
-.achievements li:before {
-    content: '🟪';
-    position: absolute;
-    left: 0;
-    top: 2px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-.profile-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 20px;
-    display: block;
-    border: 4px solid #9370db;
-    box-shadow: 0 0 20px rgba(147, 112, 219, 0.6);
-}
-</style>
+  <base href="https://jonny.helwer.personal.info/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jonny Helwer - Portfolio</title>
+
+  <style>
+    body, html {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-color: #0e0614;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+      background-color: rgba(30, 20, 40, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    header {
+      background-color: #321b4a;
+      color: #ffffff;
+      text-align: center;
+      padding: 2em;
+      border-radius: 20px 20px 0 0;
+      margin: -20px -20px 20px -20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      margin-bottom: 0.2em;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .subtitle {
+      font-weight: 300;
+      color: #d8bfff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      margin-top: 0.2em;
+    }
+
+    section {
+      background-color: #1e1425;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      color: #9370db;
+      font-size: 1.8em;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      margin-top: 0;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 780px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .timeline {
+      border-left: 3px solid #9370db;
+      padding-left: 20px;
+      margin-left: 20px;
+    }
+
+    .event {
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .event:before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      background: #9370db;
+      border-radius: 50%;
+      position: absolute;
+      left: -29px;
+      top: 6px;
+      box-shadow: 0 0 8px rgba(147, 112, 219, 0.8);
+    }
+
+    .meta {
+      color: #d8bfff;
+      opacity: 0.95;
+      margin: 0.2em 0 0.4em 0;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background-color: #4b2e6b;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      user-select: none;
+    }
+
+    .skill:hover {
+      background-color: #9370db;
+      color: #0e0614;
+      box-shadow: 0 6px 12px rgba(147, 112, 219, 0.4);
+    }
+
+    #background-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    a {
+      color: #9370db;
+      text-decoration: none;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    a:hover {
+      color: #b19cd9;
+      text-shadow: 0 0 8px rgba(147, 112, 219, 0.6);
+    }
+
+    .quote {
+      color: #d8bfff;
+      border-left: 3px solid #9370db;
+      padding-left: 15px;
+      margin: 18px 0 0 0;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .achievements {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .achievements li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .achievements li:before {
+      content: '🟪';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      display: block;
+      border: 4px solid #9370db;
+      box-shadow: 0 0 20px rgba(147, 112, 219, 0.6);
+    }
+
+    footer {
+      text-align: center;
+      opacity: 0.95;
+      padding-bottom: 8px;
+    }
+
+    .small {
+      opacity: 0.9;
+      font-size: 0.95em;
+    }
+
+    .pill {
+      display: inline-block;
+      background: rgba(147,112,219,0.18);
+      border: 1px solid rgba(147,112,219,0.35);
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin: 6px 6px 0 0;
+      font-size: 0.9em;
+      color: #d8bfff;
+    }
+  </style>
 </head>
+
 <body>
-    <canvas id="background-canvas"></canvas>
-    <div class="container">
-        <header>
-            <img src="https://i.imgur.com/yq3sCNC.png" alt="Jonny Helwer" class="profile-image" width="200" height="200">
-            <h1>Jonny Helwer</h1>
-            <p class="subtitle">Abiturient | Technik-Enthusiast | Musiker | Künstler</p>
-        </header>
+  <canvas id="background-canvas"></canvas>
 
-        <section>
-            <h2>Über Mich</h2>
-            <p>Hallo! Ich bin Jonny, 2004 geboren und frisch gebackener Student. Im Sommer 2024 habe ich meinen Abschluss an der IGS Lehrte Süd gemacht. Meine Leidenschaft gilt der Mathematik und moderner Technologie, wie KI. Ich bin immer begierig darauf, Neues zu lernen und mich weiterzuentwickeln.</p>
-            <p>In meiner Freizeit spiele ich E-Gitarre und liebe es, mich künstlerisch auszuleben. Bisher hatte ich das Glück, verschiedene Länder in Europa zu bereisen, was meinen Horizont enorm erweitert hat.</p>
-            <div class="quote">
-                "Remember to look up at the stars and not down at your feet." - Stephen Hawking
-            </div>
-        </section>
+  <div class="container">
+    <header>
+      <img src="https://i.imgur.com/yq3sCNC.png" alt="Jonny Helwer" class="profile-image" width="200" height="200">
+      <h1>Jonny Helwer</h1>
+      <p class="subtitle">IT-Hardware - Windows - Microsoft 365 - strukturierte Dokumentation</p>
+      <div class="small">
+        Lehrte (31275) - <a href="mailto:jonnyhelwer@proton.me">jonnyhelwer@proton.me</a> - 0176 23105717
+      </div>
+    </header>
 
-        <section>
-            <h2>Fähigkeiten</h2>
-            <div class="skills">
-                <span class="skill">MS-Office (fortgeschritten)</span>
-                <span class="skill">Python (Grundkenntnisse)</span>
-                <span class="skill">Mathematik</span>
-                <span class="skill">Musikalisch begabt</span>
-				<span class="skill">Künstlerisch begabt</span>
-                <span class="skill">Interkulturelle Kompetenz</span>
-				<span class="skill">Anpassungsfähig</span>
-				<span class="skill">Flexibil</span>
-            </div>
-        </section>
+    <section>
+      <h2>Über mich</h2>
+      <p>
+        Ich bin Jonny (Abitur 2024, IGS-Lehrte) und arbeite gern praxisnah an IT-Systemen: Hardware aufbauen, Windows sauber einrichten,
+        Probleme strukturiert eingrenzen und Lösungen nachvollziehbar dokumentieren. Ich möchte bewusst in eine praktische Ausbildung wechseln
+        und suche deshalb ab dem 01.05.2026 ein bezahltes Praktikum bis zum Ausbildungsbeginn, mit dem Ziel, anschließend ab dem 01.08.2026 die
+        Ausbildung zum Kaufmann oder zur Kauffrau für IT-System-Management zu starten.
+      </p>
+      <p class="meta">
+        Was mich ausmacht: zuverlässig, strukturiert, schnelle Auffassungsgabe, saubere Kommunikation und ein echter Technik-Fokus.
+      </p>
+      <div class="quote">
+        "Remember to look up at the stars and not down at your feet." - Stephen Hawking
+      </div>
+    </section>
 
-        <section>
-            <h2>Ausbildung</h2>
-            <div class="timeline">
-				<div class="event">
-					<h3>Studium</h3>
-					<p>Gottfried Willhelm Leibniz Universität Hannover | Hannover, 2024</p>
-					<p>2 Semester Informatik B.Sc. [abgebrochen], 2024-2025</p>
-					<p>Mathematik B.Sc. angehend, 2025</p>
-                <div class="event">
-                    <h3>Abitur</h3>
-                    <p>IGS Lehrte Süd, 2021-2024</p>
-                    <p>Profil: Mathematisch- naturwissenschaftliches Profil</p>
-					<p>Prüfungsfächer:</p>
-					<ol>
-						<li>Mathematik*</li>
-						<li>Biologie*</li>
-						<li>Deutsch*</li>
-						<li>Politik/Wirtschaft</li>
-						<li>Physik(mündlich)</li>
-					</ol>
-					<p><sup>* = Leistungskurs</sup></p>
-					<p>Abschlussnote: (3,2)</p>
-					<p><br></p>
-				<div class="event">
-					<h3>Erweiterten Realschulabschluss</h3>
-                    <p>Realschule Lehrte Süd, 2015-2021</p>
-                    <p>Abschlussnote: (2,3)</p>
-					<p><br></p>
-				<div class="event">
-					<h3>Grundschulabschluss</h3>
-					<p>Grundschule | An der Masch, 2013-2015</p>
-					<p>Grundschule Lehrte Süd, 2011-2013</p>
+    <section>
+      <h2>Zielprofil</h2>
+      <div class="two-col">
+        <div>
+          <div class="pill">Praktikum ab 01.05.2026</div>
+          <div class="pill">Idealerweise bis Ausbildungsbeginn</div>
+          <div class="pill">Ausbildung ab 01.08.2026</div>
+          <p class="small">
+            Ich suche ein Umfeld, in dem ich Anforderungen aufnehmen, IT-Lösungen mitdenken, Angebote und technische Dokumentation sauber erstellen
+            und Systeme im laufenden Betrieb zuverlässig unterstützen kann.
+          </p>
+        </div>
+        <div>
+          <div class="pill">Fokus: Hardware und Windows</div>
+          <div class="pill">Microsoft 365</div>
+          <div class="pill">Support und Doku</div>
+          <p class="small">
+            Ich arbeite gern praktisch und nachvollziehbar: erst Problem sauber eingrenzen, dann Lösung umsetzen, anschließend dokumentieren,
+            damit andere es reproduzieren können.
+          </p>
+        </div>
+      </div>
+    </section>
 
-                </div>
-				</div>
-				</div>
-				</div>
-            </div>
-        </section>
+    <section>
+      <h2>Fähigkeiten</h2>
+      <div class="skills">
+        <span class="skill">Windows (sehr sicher)</span>
+        <span class="skill">Microsoft 365 (sicher)</span>
+        <span class="skill">MS Office (gut)</span>
+        <span class="skill">IT-Hardware</span>
+        <span class="skill">PC-Builds und Inbetriebnahme</span>
+        <span class="skill">Troubleshooting (Grundlagen)</span>
+        <span class="skill">HTML (Grundlagen)</span>
+        <span class="skill">CSS (Grundlagen)</span>
+        <span class="skill">Python (Grundlagen)</span>
+        <span class="skill">C (Grundlagen)</span>
+        <span class="skill">Dokumentation (strukturiert)</span>
+        <span class="skill">Teamarbeit und Zuverlässigkeit</span>
+      </div>
+      <p class="small" style="margin-top: 14px;">
+        Hinweis: Linux habe ich bisher noch nicht im praktischen Einsatz genutzt. Ich bin bereit, mir das zügig anzueignen, sobald es im Praktikum oder in der Ausbildung relevant wird.
+      </p>
+    </section>
 
-        <section>
-            <h2>Praktische Erfahrungen</h2>
-            <div class="timeline">
-				<div class="event">
-                    <h3>Warenverräumer</h3>
-                    <p>Wilhelm Cramer GmbH, 2024</p>
-					<p>angehend</p>
-                    <p>Minijob: Einräumen von Waren in Regale und auf Verkaufsflächen, das Kontrollieren von Frische und Mindesthaltbarkeitsdatum sowie das Pflegen der Präsentation der Ware.</p>
-                </div>
-				<p><br></p>
-                <div class="event">
-                    <h3>Servicemitarbeiter</h3>
-                    <p>Vapiano, 2021</p>
-					<p>Länge: Zwei Wochen</p>
-                    <p>Erfolgreiches Praktikum mit Betreuung der Gäste an der Kasse, Teilweise Bedienung und Reinigungsarbeiten</p>
-                </div>
-				<p><br></p>
-                <div class="event">
-                    <h3>Anlagenmechatroniker</h3>
-                    <p>Karl Weymann GmbH, 2019</p>
-					<p>Länge: Zwei Wochen</p>
-                    <p>Erfolgreiches Praktikum mit Montage und Reparatur von Heizungs-, Kälte-, Klima-, Lüftungs- und Sanitäranlagen</p>
-                </div>
-            </div>
-        </section>
+    <section>
+      <h2>Projekte</h2>
+      <div class="timeline">
+        <div class="event">
+          <h3>Mini-Server (Homelab)</h3>
+          <p class="meta">Allround-Server für Game-Server-Hosting und Offline-LLM-Hosting</p>
+          <ul>
+            <li>Zusammenbau aus älterer Hardware (Intel i5-2500K 3,3 GHz, AMD RX 580 8 GB, 12 GB RAM)</li>
+            <li>Ziel: stabile private Umgebung für Server-Services und lokale KI-Modelle</li>
+            <li>Lernziel: Betrieb, Wartung, nachvollziehbare Struktur und dokumentierbare Konfigurationen</li>
+          </ul>
+        </div>
 
-        <section>
-            <h2>Persönliche Erfolge</h2>
-            <ul class="achievements">
-                <li>Bereiste 7 Länder und erweiterte meine interkulturelle Kompetenz</li>
-                <li>Erlernte das E-Gitarren-Spielen, Zeichnen und Malen autodidaktisch</li>
-                <li>Entwickelte kleine Python-, Java- und C-Anwendungen und HTML-Webseiten</li>
-                <li>Organisierte die Technik mehrerer Schulveranstaltungen</li>
-            </ul>
-        </section>
+        <div class="event">
+          <h3>Portfolio-Website</h3>
+          <p class="meta">Einfaches Webprojekt (HTML/CSS) als übersichtliches Profil</p>
+          <ul>
+            <li>Fokus auf Klarheit, Lesbarkeit und strukturierte Darstellung</li>
+            <li>Erweiterbar um Projekte, Skills und Dokumentation</li>
+          </ul>
+        </div>
 
-        <section>
-            <h2>Zukunftspläne</h2>
-            <p>Nach meinem Studium möchte ich meine Leidenschaft für Mathematik und Technologie weiter vertiefen. Ich plane, ein Job im Bereich Mathematik oder Informatik zu beginnen. Mein Ziel ist es, innovative Technologien zu entwickeln, die einen positiven Einfluss auf die Gesellschaft haben.</p>
-            <p>Nebenbei möchte ich meine Programmierkenntnisse in weiteren Programmiersprachen ausbauen und vielleicht sogar meine eigene KI entwickeln. Auch meine musikalischen Fähigkeiten will ich weiter verbessern und träume davon, eines Tages eigene Musik zu komponieren und zu spielen.</p>
-        </section>
+        <div class="event">
+          <h3>PC-Builds im privaten Umfeld</h3>
+          <p class="meta">Komponentenwahl, Zusammenbau, Inbetriebnahme, Basis-Troubleshooting</p>
+          <ul>
+            <li>Windows-Setup und Standard-Optimierungen</li>
+            <li>Fehlerbilder eingrenzen und pragmatisch lösen</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        <footer>
-            <p>Möchten Sie mehr erfahren? <a href="mailto:jonnyhelwer@proton.me">Kontaktieren Sie mich</a> für weitere Informationen oder Kooperationsmöglichkeiten!</p>
-        </footer>
-    </div>
-	<script>
+    <section>
+      <h2>Bildung</h2>
+      <div class="timeline">
+        <div class="event">
+          <h3>Gottfried Wilhelm Leibniz Universität Hannover</h3>
+          <p class="meta">10/2024 - heute</p>
+          <ul>
+            <li>Informatik B.Sc. (2 Semester, ohne Abschluss)</li>
+            <li>Mathematik B.Sc. (2 Semester, ohne Abschluss)</li>
+            <li>Anwendungsfach: Physik</li>
+          </ul>
+          <p class="small">
+            Ich habe gemerkt, dass ich langfristig praxisorientiert arbeiten möchte und setze deshalb auf den Weg über Praktikum und Ausbildung.
+          </p>
+        </div>
+
+        <div class="event">
+          <h3>IGS-Lehrte (Lehrte)</h3>
+          <p class="meta">Abitur 2024</p>
+          <ul>
+            <li>Durchschnittsnote: 3,2</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Praktische Erfahrungen</h2>
+      <div class="timeline">
+        <div class="event">
+          <h3>EDEKA Cramer (Lehrte) - Minijob Warenverräumer</h3>
+          <p class="meta">01/2026 - heute</p>
+          <ul>
+            <li>Warenverräumung, Zuverlässigkeit im Schichtbetrieb, Teamarbeit, körperliche Belastbarkeit</li>
+            <li>Routinen einhalten, sauber und zügig arbeiten, Verantwortung übernehmen</li>
+          </ul>
+        </div>
+
+        <div class="event">
+          <h3>Vapiano (Hannover) - Pflichtpraktikum Servicemitarbeiter</h3>
+          <p class="meta">11/2021 (2 Wochen)</p>
+          <ul>
+            <li>Gäste betreuen, Kasse, teilweise Bedienung und Reinigungsarbeiten</li>
+          </ul>
+        </div>
+
+        <div class="event">
+          <h3>Karl Weymann GmbH (Lehrte) - Pflichtpraktikum Anlagenmechatroniker</h3>
+          <p class="meta">09/2019 (2 Wochen)</p>
+          <ul>
+            <li>Montage und Reparatur von Heizungs-, Kälte-, Klima-, Lüftungs- und Sanitäranlagen</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Persönliche Erfolge</h2>
+      <ul class="achievements">
+        <li>Eigenes Homelab-Projekt: Mini-Server aufgebaut und produktiv genutzt (Game-Server und Offline-LLM-Hosting)</li>
+        <li>Mehrere PCs im privaten Umfeld geplant, aufgebaut und in Betrieb genommen</li>
+        <li>Portfolio-Website erstellt und als Bewerbungs-Übersicht nutzbar gemacht</li>
+        <li>Praxisorientierter Wechsel: Studium ausprobiert, bewusst für den praktischen Berufsweg entschieden</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Kontakt</h2>
+      <p>
+        E-Mail: <a href="mailto:jonnyhelwer@proton.me">jonnyhelwer@proton.me</a><br>
+        Telefon: 0176 23105717
+      </p>
+      <p class="small">
+        Wenn du willst, kann ich hier auch einen Download-Link zu deinem Lebenslauf als PDF einbauen, sobald du mir den Dateinamen/URL gibst.
+      </p>
+    </section>
+
+    <footer>
+      <p class="small">Stand: 2026 - Portfolio von Jonny Helwer</p>
+    </footer>
+  </div>
+
+  <script>
     const canvas = document.getElementById('background-canvas');
     const ctx = canvas.getContext('2d');
 
@@ -280,111 +418,118 @@ a:hover {
     const mouseInfluenceRadius = 125;
 
     class Shape {
-        constructor(x, y) {
-            this.x = x;
-            this.y = y;
-            this.size = Math.random() * 15 + 5;
-            this.speedX = Math.random() * 1.5 - 1;
-            this.speedY = Math.random() * 1.5 - 1;
-        }
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 15 + 5;
+        this.speedX = Math.random() * 1.5 - 1;
+        this.speedY = Math.random() * 1.5 - 1;
+      }
 
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(147, 112, 219, 0.3)';
-            ctx.fill();
-        }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(147, 112, 219, 0.3)';
+        ctx.fill();
+      }
 
-        update() {
-            this.x += this.speedX + (Math.random() - 0.5);
-            this.y += this.speedY + (Math.random() - 0.5);
+      update() {
+        this.x += this.speedX + (Math.random() - 0.5);
+        this.y += this.speedY + (Math.random() - 0.5);
 
-            if (this.x < 0 || this.x > canvasWidth) this.speedX *= -1;
-            if (this.y < 0 || this.y > canvasHeight) this.speedY *= -1;
+        if (this.x < 0 || this.x > canvasWidth) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvasHeight) this.speedY *= -1;
 
-            this.x = Math.max(0, Math.min(this.x, canvasWidth));
-            this.y = Math.max(0, Math.min(this.y, canvasHeight));
-        }
+        this.x = Math.max(0, Math.min(this.x, canvasWidth));
+        this.y = Math.max(0, Math.min(this.y, canvasHeight));
+      }
     }
 
     function initShapes() {
-        for (let i = 0; i < numShapes; i++) {
-            shapes.push(new Shape(Math.random() * canvasWidth, Math.random() * canvasHeight));
-        }
+      shapes.length = 0;
+      for (let i = 0; i < numShapes; i++) {
+        shapes.push(new Shape(Math.random() * canvasWidth, Math.random() * canvasHeight));
+      }
     }
 
     function drawConnections() {
-        ctx.strokeStyle = 'rgba(147, 112, 219, 0.1)';
-        ctx.lineWidth = 1;
-        for (let i = 0; i < shapes.length; i++) {
-            for (let j = i + 1; j < shapes.length; j++) {
-                const dx = shapes[i].x - shapes[j].x;
-                const dy = shapes[i].y - shapes[j].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < connectionDistance) {
-                    ctx.beginPath();
-                    ctx.moveTo(shapes[i].x, shapes[i].y);
-                    ctx.lineTo(shapes[j].x, shapes[j].y);
-                    ctx.stroke();
-                }
-            }
+      ctx.strokeStyle = 'rgba(147, 112, 219, 0.1)';
+      ctx.lineWidth = 1;
+
+      for (let i = 0; i < shapes.length; i++) {
+        for (let j = i + 1; j < shapes.length; j++) {
+          const dx = shapes[i].x - shapes[j].x;
+          const dy = shapes[i].y - shapes[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < connectionDistance) {
+            ctx.beginPath();
+            ctx.moveTo(shapes[i].x, shapes[i].y);
+            ctx.lineTo(shapes[j].x, shapes[j].y);
+            ctx.stroke();
+          }
         }
+      }
     }
 
     function animate() {
-        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+      ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+      drawConnections();
 
-        drawConnections();
+      for (let shape of shapes) {
+        shape.update();
+        shape.draw();
+      }
 
-        for (let shape of shapes) {
-            shape.update();
-            shape.draw();
-        }
-
-        requestAnimationFrame(animate);
+      requestAnimationFrame(animate);
     }
 
     function handleMouseMove(event) {
-        const mouseX = event.clientX;
-        const mouseY = event.clientY;
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
 
-        for (let shape of shapes) {
-            const dx = mouseX - shape.x;
-            const dy = mouseY - shape.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
+      for (let shape of shapes) {
+        const dx = mouseX - shape.x;
+        const dy = mouseY - shape.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < mouseInfluenceRadius) {
-                shape.x -= dx * 0.25;
-                shape.y -= dy * 0.25;
-            }
+        if (distance < mouseInfluenceRadius) {
+          shape.x -= dx * 0.25;
+          shape.y -= dy * 0.25;
         }
+      }
     }
 
     function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
         };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
     }
 
     function handleResize() {
-        canvasWidth = window.innerWidth;
-        canvasHeight = window.innerHeight;
-        canvas.width = canvasWidth;
-        canvas.height = canvasHeight;
+      const prevWidth = canvasWidth;
+      const prevHeight = canvasHeight;
 
-        // Scale existing shapes instead of recreating them
-        const scaleX = canvasWidth / canvas.width;
-        const scaleY = canvasHeight / canvas.height;
+      canvasWidth = window.innerWidth;
+      canvasHeight = window.innerHeight;
+
+      canvas.width = canvasWidth;
+      canvas.height = canvasHeight;
+
+      if (prevWidth > 0 && prevHeight > 0) {
+        const scaleX = canvasWidth / prevWidth;
+        const scaleY = canvasHeight / prevHeight;
         shapes.forEach(shape => {
-            shape.x *= scaleX;
-            shape.y *= scaleY;
+          shape.x *= scaleX;
+          shape.y *= scaleY;
         });
+      }
     }
 
     initShapes();
@@ -392,6 +537,6 @@ a:hover {
 
     canvas.addEventListener('mousemove', debounce(handleMouseMove, 10));
     window.addEventListener('resize', debounce(handleResize, 250));
-    </script>
+  </script>
 </body>
 </html>
